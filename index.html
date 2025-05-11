@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Classifier</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.21.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Image Classifier</h1>
+
+    <!-- Training Image Section -->
+    <h3>Training Images</h3>
+    <div id="trainingImages" style="display: none;"></div>
+
+    <input type="file" id="imageInput" accept="image/*" />
+    <input type="text" id="labelInput" placeholder="Enter label (e.g., apple)" />
+    <button onclick="addExample()">Add Example</button>
+    <button onclick="trainModel()">Train Model</button>
+    
+    <p id="status"></p>
+
+    <!-- Test Image Section -->
+    <h3>Test Image</h3>
+    <input type="file" id="testInput" accept="image/*" />
+    <button onclick="predictImage()">Predict</button>
+    
+    <!-- Test Image Preview and Prediction -->
+    <div id="testImagePreview"></div>
+    <p id="prediction"></p>
+
+    <!-- Show/Hide Button for Training Images -->
+    <button id="showImagesButton" onclick="toggleImages()">Show Training Images</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
